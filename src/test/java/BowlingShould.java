@@ -17,14 +17,7 @@ public class BowlingShould {
     void return_0_when_no_pins_scored() {
         int score = bowling.calculateTry("-");
         assertEquals(0, score);
-    }        BowlingCalculator bowling = new BowlingCalculator();
-
-        BowlingCalculator bowling = new BowlingCalculator();
-
-        BowlingCalculator bowling = new BowlingCalculator();
-
-        BowlingCalculator bowling = new BowlingCalculator();
-
+    }
 
     @Test
     void return_1_when_1_pin_scored() {
@@ -49,5 +42,18 @@ public class BowlingShould {
         int score = bowling.calculateFrame("33");
         assertEquals(6, score);
     }
+
+    @Test
+    public void return_8_when_8_pins_are_scored_in_a_single_frame() {
+        int score = bowling.calculateFrame("53");
+        assertEquals(8, score);
+    }
+
+    @Test
+    public void return_9_when_9_pins_are_scored_in_a_single_frame() {
+        int score = bowling.calculateFrame("54");
+        assertEquals(9, score);
+    }
+
 
 }
