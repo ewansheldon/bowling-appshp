@@ -62,7 +62,7 @@ public class BowlingShould {
     }
 
     @Test
-    public void return_16_when_spare_and_6_pins_scored_on_next_frame() {
+    public void return_16_when_spare_and_6_pins_scored_on_next_try() {
         int score = bowling.calculateFrame("3/|6");
         assertEquals(16, score);
     }
@@ -76,6 +76,12 @@ public class BowlingShould {
     @Test
     public void return_10_when_spare_and_0pins_scored_on_next_frame() {
         int score = bowling.calculateFrame("9/|-");
+        assertEquals(10, score);
+    }
+
+    @Test
+    public void return_10_when_strike_and_0_pins_scored_on_next_frame() {
+        int score = bowling.calculateFrame("X|--");
         assertEquals(10, score);
     }
 
