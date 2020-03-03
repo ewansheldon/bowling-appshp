@@ -10,12 +10,16 @@ public class BowlingCalculator {
     }
 
     public int calculateFrame(String frame) {
-        if (frame.equals("54")) {
-            return 9;
+        String[] rolls = frame.split("");
+        int sum = 0;
+
+        if (rolls[1].equals("/")) {
+            return 10 + calculateTry(rolls[3]);
         }
-        if (frame.equals("53")) {
-            return 8;
+
+        for (String singleRoll : rolls) {
+            sum += calculateTry(singleRoll);
         }
-        return 6;
+        return sum;
     }
 }
