@@ -1,9 +1,10 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.codurance.bowling_calculator.BowlingCalculator;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class BowlingShould {
+
     @Test
     void return_0_when_no_pins_scored() {
         BowlingCalculator bowling = new BowlingCalculator();
@@ -30,6 +31,13 @@ public class BowlingShould {
         BowlingCalculator bowling = new BowlingCalculator();
         int score = bowling.calculateTry("3");
         assertEquals(3, score);
+    }
+
+    @Test
+    public void return_6_when_6_pins_are_scored_in_a_single_frame() {
+        BowlingCalculator bowling = new BowlingCalculator();
+        int score = bowling.calculateFrame("33");
+        assertEquals(6, score);
     }
 
 }
